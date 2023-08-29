@@ -128,7 +128,7 @@ app.post("/send-message", async (req, res) => {
         response: "El numero no existe",
       });
     } else {
-      numberWA = "5521" + number + "@s.whatsapp.net";
+      numberWA = number + "@s.whatsapp.net";
 
       if (isConnected()) {
         const exist = await sock.onWhatsApp(numberWA);
