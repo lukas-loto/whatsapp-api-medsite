@@ -136,7 +136,7 @@ app.post("/send-message", async (req, res) => {
         if (exist?.jid || (exist && exist[0]?.jid)) {
           const order = "\n";
           const replace = /<br>/g; 
-          const newstr = encodedMessage.replace(replace, order);
+          const newstr = tempMessage.replace(replace, order);
           sock
             .sendMessage(exist.jid || exist[0].jid, {
               text: newstr,
