@@ -134,9 +134,10 @@ app.post("/send-message", async (req, res) => {
         const exist = await sock.onWhatsApp(numberWA);
 
         if (exist?.jid || (exist && exist[0]?.jid)) {
+          const encodedMessage = decodeURIComponent(tempMessage); 
           sock
             .sendMessage(exist.jid || exist[0].jid, {
-              text: tempMessage,
+              text: encodedMessage,
             })
             .then((result) => {
               res.status(200).json({
