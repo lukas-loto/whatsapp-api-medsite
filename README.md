@@ -1,6 +1,6 @@
 # tools
 
--node version 16.16.0
+-node
 
 # install project
 
